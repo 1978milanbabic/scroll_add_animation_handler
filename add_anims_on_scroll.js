@@ -1,12 +1,12 @@
-(function($, win, doc) {
+(function ($, win, doc) {
 
-    $(doc).ready(function() {
+    $(doc).ready(function () {
         //prehide anims
         $(".anim").css("opacity", "0"); //ili kroz css
 
     });
 
-    $(win).load(function() {
+    $(win).load(function () {
         //************** anim object - must be loaded here! ***********
 
         var scroll_animator = {
@@ -18,13 +18,13 @@
             aClass: [],
             elemPos: [],
             elemH: [],
-            init: function(sctop) {
+            init: function (sctop) {
                 var t = this;
                 //first time loaded
                 if (!t.initiated_fn) {
                     t.initiated_fn = true;
                     for (var i = 0; i < t.elems.length; i++) {
-                        var elem = t.elems[i]; //vraca html    
+                        var elem = t.elems[i]; //returns DOM Object
 
                         t.initiated.push(false);
 
@@ -64,7 +64,7 @@
                 }
                 t.addAnim(sctop);
             },
-            addAnim: function(sctop) {
+            addAnim: function (sctop) {
                 var t = this;
 
                 var WH = $(win).height();
@@ -73,9 +73,9 @@
                     var elem = $(t.elems[i]);
                     //if not already animated
                     if (!t.initiated[i]) {
-                        var startH = t.aStarts[i] / 6; //sestine!!!!
+                        var startH = t.aStarts[i] / 6; //Only 1/6th's of element height!!!!
                         if ((sctop + WH - startH * t.elemH[i]) > t.elemPos[i] && !t.initiated[i]) {
-                            //akcija
+                            //adding class action
                             t.initiated[i] = true;
                             var klasa = t.aClass[i].substring(2);
                             if (t.aDelays[i] != 0) {
@@ -85,8 +85,6 @@
                             } else {
                                 elem.addClass(klasa);
                             }
-
-
                         }
                     }
                 }
@@ -98,8 +96,6 @@
             }
         };
 
-
-
         //scroll events
         var startsctop = $(win).scrollTop();
         scroll_animator.init(startsctop);
@@ -110,12 +106,6 @@
             scroll_animator.init(sctop);
         });
 
-
-
     }); //win load
 
-
-
-
-
-})(jQuery, window, document);
+}(jQuery, window, document));
