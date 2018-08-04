@@ -2,13 +2,11 @@
 
     $(doc).ready(function () {
         //prehide anims
-        $(".anim").css("opacity", "0"); //ili kroz css
-
+        $(".anim").css("opacity", "0"); //best practice is to add css property
     });
 
     $(win).load(function () {
         //************** anim object - must be loaded here! ***********
-
         var scroll_animator = {
             elems: $(".anim"),
             initiated: [],
@@ -89,20 +87,20 @@
                     }
                 }
             },
-            timeic: function(timeo, clas, el) {
-                setTimeout(function() {
+            timeic: function (timeo, clas, el) {
+                setTimeout(function () {
                     el.addClass(clas);
                 }, timeo);
             }
         };
 
         //scroll events
-        var startsctop = $(win).scrollTop();
-        scroll_animator.init(startsctop);
+        var sctop = $(win).scrollTop();
+        scroll_animator.init(sctop);
 
         //win scroll
-        $(win).scroll(function() {
-            var sctop = $(win).scrollTop();
+        $(win).scroll(function () {
+            sctop = $(win).scrollTop();
             scroll_animator.init(sctop);
         });
 
