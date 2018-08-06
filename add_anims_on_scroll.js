@@ -1,3 +1,14 @@
+/**
+ * Add animation class on scroll
+ * Copyright 2018 Milan Babic
+ * Licensed under: SEE LICENSE IN https://github.com/1978milanbabic/scroll_add_animation_handler/blob/master/LICENSE
+ */
+/**
+ * Add animation class on scroll
+ * @version 1.0.0
+ * @author Milan Babic
+ */
+
 (function ($, win, doc) {
 
     $(doc).ready(function () {
