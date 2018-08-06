@@ -6,7 +6,7 @@
     });
 
     $(win).load(function () {
-        //************** anim object - must be loaded here! ***********
+        //************** anim object ***********
         var scroll_animator = {
             elems: $(".anim"),
             initiated: [],
