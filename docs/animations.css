@@ -1,0 +1,142 @@
+/* cool css animations */
+.anim {
+    opacity: 0;
+}
+
+@keyframes tada {
+  from {
+    transform: scale3d(1, 1, 1);
+    opacity: 0;
+  }
+
+  10%, 20% {
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    opacity: 1
+  }
+
+  30%, 50%, 70%, 90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%, 60%, 80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+}
+
+.tada {
+  animation-name: tada;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes bounce-in-left {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(-3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(25px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  90% {
+    transform: translate3d(5px, 0, 0);
+  }
+
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.bounce-in-left {
+  animation-name: bounce-in-left;
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadein {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.fadein {
+  animation-name: fadein;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes bounce-in-right {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 0;
+    transform: translate3d(3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(-25px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(10px, 0, 0);
+  }
+
+  90% {
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.bounce-in-right {
+  animation-name: bounce-in-right;
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+}
+
+@keyframes scalein {
+    from{
+        opacity: 0;
+        transform: scale(1.5,1.5);
+    }
+    10%{
+        opacity: 1
+    }
+    to{
+        opacity: 1;
+        transform: scale(1,1);
+    }
+}
+
+.scalein {
+  animation-name: scalein;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
